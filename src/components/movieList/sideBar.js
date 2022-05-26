@@ -5,7 +5,7 @@ import HeadText from '../HeadText';
 
 export default function SideBar() {
   return (
-   <Grid item md={3} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>
+   <Grid item md={3} sm={12} xs={12} px={1} sx={{bgcolor:'rgba(255,255,255,0.1)'}}>
        <Grid>
            <HeadText text='New Movies'/>
            <SideBarCard/>
