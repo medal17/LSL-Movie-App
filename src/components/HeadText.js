@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function HeadText(props) {
   return (
-    <Typography> 
+    <Typography color='#fff' variant='body1' fontWeight={'bold'}> 
         {props.text}
     </Typography>
   );
