@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import {BrowserRouter , Route, Routes} from 'react-router-dom'
 
 import './index.css';
-// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import MovieList from './pages/MovieList';
 import ViewMovie from './pages/ViewMovie';
@@ -14,8 +13,7 @@ root.render(
     <Routes>
       <Route path='/' element={<MovieList/>} />
       <Route path='movie' element={<ViewMovie/>} />
-    {/* <App /> */}
-    {/* <MovieList/> */}
+
     </Routes>
   </BrowserRouter>
 );

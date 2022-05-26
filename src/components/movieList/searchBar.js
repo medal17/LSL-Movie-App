@@ -1,8 +1,7 @@
-import { Grid, TextField, InputAdornment } from '@mui/material';
-// import {Search} from '@m'
+import { Grid, TextField } from '@mui/material';
 import React from 'react';
 
-export default function SearchBar() {
+export default function SearchBar(props) {
   return (
     <Grid container >
         <TextField
@@ -12,6 +11,7 @@ export default function SearchBar() {
             color='info'
             fullWidth
             variant='standard'
+            onChange={e=>props.setSearchText(e.target.value)}
         />
     </Grid>
   );

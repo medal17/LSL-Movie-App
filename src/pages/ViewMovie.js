@@ -1,4 +1,4 @@
-import { Grid, Typography, Chip } from '@mui/material';
+import { Grid, Skeleton, Chip } from '@mui/material';
 import axios from 'axios';
 import React, {useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
@@ -30,21 +30,21 @@ export default function ViewMovie() {
 
   useEffect(()=>{
     request(); 
-  },[])
+  })
 
   // console.log(movies)
   
 
   return (
-    movies &&
+    movies ?
     <Grid container justifyContent='center' py={2}>
         {/* //Movie Image */}
-        <Grid container justifyContent='center' md={10} sm={10} xs={11} sx={{bgcolor:'rgba(255,255,255,0.1)', borderRadius:'15px'}}>
-          <img src={movies.Poster?movies.Poster: 'logo512.png'} height={250}/>
+        <Grid container justifyContent='center' md={8} sm={10} xs={11} sx={{bgcolor:'rgba(255,255,255,0.1)', borderRadius:'15px'}}>
+          <img alt='Movie Poster' src={movies.Poster!=='N/A'?movies.Poster: 'no-image-vector-symbol-missing-260nw-1310632172.jpg'} height={250}/>
         </Grid>
 
         {/* Movie Information */}
-        <Grid mx={{xs:1, md:8, sm:5}} md={10} sm={10} xs={11}  my={2} container>
+        <Grid mx={{xs:1, md:8, sm:5}} md={8} sm={10} xs={11}  my={2} container>
           <Grid container justifyContent={'space-between'}>
             <HeadText text={movies.Title}/>
             {/* <HeadText bodyText text='Time'/> */}
@@ -66,6 +66,27 @@ export default function ViewMovie() {
             <HeadText bodyText text={'Votes: '+movies.imdbVotes}/>
           </Grid>
         </Grid>
+    </Grid>:
+    <Grid container justifyContent='center' py={2}>
+      <Grid container justifyContent='center' md={8} sm={10} xs={11} sx={{bgcolor:'rgba(255,255,255,0.1)', borderRadius:'15px'}}>
+        <Skeleton variant="rectangular" width='100%' height={250} />
+      </Grid>
+      <Grid mx={{xs:1, md:8, sm:5}} md={8} sm={10} xs={11}  my={2} container>
+        <Skeleton variant="rectangular" width={'100%'} height={20} />
+      </Grid>
+
+      <Grid mx={{xs:1, md:8, sm:5}} md={8} sm={10} xs={11}  my={0.5} container>
+        <Skeleton variant="rectangular" width={'100%'} height={20} />
+      </Grid>
+
+      <Grid mx={{xs:1, md:8, sm:5}} md={8} sm={10} xs={11}  my={0.5} container>
+        <Skeleton variant="rectangular" width={'100%'} height={20} />
+      </Grid>
+
+      <Grid mx={{xs:1, md:8, sm:5}} md={8} sm={10} xs={11}  my={0.5} container>
+      < Skeleton variant="rectangular" width={'100%'} height={20} />
+      </Grid>
+     
     </Grid>
 
   );
