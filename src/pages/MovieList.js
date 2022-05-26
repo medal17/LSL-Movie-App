@@ -5,7 +5,6 @@ import axios from 'axios'
 import HeadText from '../components/HeadText';
 import MainPage from '../components/movieList/mainPage';
 import SideBar from '../components/movieList/sideBar';
-import { GetMovies } from '../connection/actions';
 
 export default function MovieList() {
   const [movies, setMovies] = useState(null);
@@ -23,7 +22,6 @@ export default function MovieList() {
     }
   })
   .then(function (response) {
-    // console.log(response.data);
     setMovies(response.data)
   }).catch(function (error) {
     console.error(error);
@@ -33,7 +31,7 @@ export default function MovieList() {
   
   useEffect(()=>{
     request(); 
-  },[])
+  })
   return (
       <Grid container >
         <Grid container px={2} py={3}>
