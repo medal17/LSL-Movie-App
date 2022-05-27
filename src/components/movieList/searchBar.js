@@ -7,7 +7,7 @@ export default function SearchBar(props) {
         <TextField
             // InputProps={{startAdornment:(<InputAdornment><Sea</InputAdornment>)}}
             sx={{bgcolor:'rgba(255,255,255,0.4)', color:'red', borderRadius:'10px', padding:'5px 8px'}}
-            placeholder='Search Movie'
+            placeholder='Search Movie by Name'
             color='info'
             fullWidth
             variant='standard'
