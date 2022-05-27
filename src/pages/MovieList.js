@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Button, Grid } from '@mui/material';
 import React, {useEffect,useState} from 'react';
 import axios from 'axios'
 
@@ -8,7 +8,8 @@ import SideBar from '../components/movieList/sideBar';
 
 export default function MovieList() {
   const [movies, setMovies] = useState(null);
-
+  const [error, setError] =useState(null)
+  const [loading, setLoading] =useState(true)
   
 
   const request=() =>{ 
@@ -22,8 +23,12 @@ export default function MovieList() {
     }
   })
   .then(function (response) {
+    setLoading(false)
     setMovies(response.data)
+    setError(false)
   }).catch(function (error) {
+    setLoading(false)
+    setError(error.message)
     console.error(error);
   });}
 
@@ -38,7 +43,15 @@ export default function MovieList() {
           <HeadText text='LSL MOVIES'/>
         </Grid>
         <SideBar/>
-        <MainPage data={movies}/>
+        {error && ! loading ? 
+        <Grid container justifyContent='center' alignContent={'center'} sx={{height:'250px'}}>
+           <HeadText bodyText text={error} />
+           <Grid container justifyContent={'center'}>
+           <Button onClick={()=>request()} >Refresh</Button>
+           </Grid>
+        </Grid>
+        :
+        <MainPage data={movies} loading={loading}/>}
       </Grid>
   );
 }

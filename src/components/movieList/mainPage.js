@@ -26,14 +26,14 @@ export default function MainPage(props) {
         :
 
         <Grid container>
-         {[1,2,3,4,4].map((e,index)=> <Grid item md={4} sm={6} xs={11} key={index}>
-            <Grid container p={1} my={2} justifyContent='center' sx={{borderRadius:'25px', bgcolor:'transparent'}}>
+         {[1,2,3,4,4].map((e,index)=> <Grid item md={4} sm={12} xs={12} key={index}>
+            <Grid container p={1} my={2} sm={12} xs={12} justifyContent='center' sx={{borderRadius:'25px', bgcolor:'transparent'}}>
               <Skeleton variant="rectangular" width={'100%'} height={118} />
             </Grid>
-            <Grid container p={1}  justifyContent='center' sx={{borderRadius:'25px', bgcolor:'transparent'}}>
+            <Grid container  sm={12} xs={12} p={1}  justifyContent='center' sx={{borderRadius:'25px', bgcolor:'transparent'}}>
               <Skeleton variant="rectangular" width={'100%'} height={20} />
             </Grid>
-            <Grid container p={1}  justifyContent='center' sx={{borderRadius:'25px', bgcolor:'transparent'}}>
+            <Grid container sm={12} xs={12} p={1}  justifyContent='center' sx={{borderRadius:'25px', bgcolor:'transparent'}}>
               <Skeleton variant="rectangular" width={'100%'} height={20} />
             </Grid>
           </Grid>)}

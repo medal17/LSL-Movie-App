@@ -49,13 +49,13 @@ export default function ViewMovie() {
             <HeadText text={movies.Title}/>
             {/* <HeadText bodyText text='Time'/> */}
             <Chip label={movies.Released} sx={{bgcolor:'#fff'}}/>
-            <Chip label={movies.Country} sx={{bgcolor:'#fff'}}/>
-            <HeadText bodyText text={movies.imdbRating+'/10'}/>
+            <Chip label={movies.Country !=='N/A'?movies.Country:'Country : N/A'} sx={{bgcolor:'#fff'}}/>
+            <HeadText bodyText text={movies.imdbRating !=="N/A" ? movies.imdbRating +'/10': 'Not Rated'}/>
             
           </Grid>
 
           <Grid py={2} container>
-            <HeadText bodyText text={movies.Plot}/>
+            <HeadText bodyText text={movies.Plot !== "N/A" ? movies.Plot:'No Description' }/>
           </Grid>
 
           <Grid container>

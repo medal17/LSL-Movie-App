@@ -1,7 +1,10 @@
 ### Runnin this app
-pull the code from git (run 'git clone https://github.com/medal17/LSL-Movie-App.git')
+##### 1
+pull the code from git (run 'git clone https://github.com/medal17/LSL-Movie-App.git') 
+##### 2
 install dependencies  (run 'yarn install')
-
+##### 3
+start application (run 'yarn start')
 
 #### Note that Material ui framework was used to develop this application and movie title shows completely when you put your mouse over the title
 
@@ -11,8 +14,11 @@ install dependencies  (run 'yarn install')
 
 Visit https://rapidapi.com/rapidapi/api/movie-database-alternative/
 register to get APIKEY
+####
 connect account your account details from pricing tab
+#####
 replace src/pages/MovieList line 21 with ('X-RapidAPI-Key': 'YourKey')
+#####
 replace src/pages/ViewMovie line 18 with ('X-RapidAPI-Key': 'YourKey')
 
 #### Thank you
